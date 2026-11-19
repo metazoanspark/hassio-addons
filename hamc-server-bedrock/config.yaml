@@ -1,15 +1,17 @@
 name: HAMC Server Bedrock
 description: Host a Bedrock Minecraft server on Home Assistant
-version: 1.2.0
+version: 1.2.1
 slug: hamc-bedrock
 init: false
 arch:
   - amd64
   - aarch64
 ports:
+  19132/tcp: 19132
   19132/udp: 19132
 ports_description:
-  19132/udp: Minecraft Server Port
+  19132/tcp: Minecraft Server Port (NetherNet signaling)
+  19132/udp: Minecraft Server Port (NetherNet gameplay)
 options:
   VERSION: LATEST
   SERVER_NAME: HAMC Server
